@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0029)http://localhost:8181/openapi -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<PRE>openapi: 3.0.0
+info:
+  title: Deployed APIs
+  version: 1.0.0
+servers:
+- url: http://localhost:8181
+- url: https://localhost:8543
+paths:
+  /data/hello:
+    get:
+      operationId: sayHello
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/client/test/{parameter}:
+    get:
+      operationId: onClientSide
+      parameters:
+      - name: parameter
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/config/lookup:
+    get:
+      operationId: getLookupConfigValue
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/config/injected:
+    get:
+      operationId: getInjectedConfigValue
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/metric/timed:
+    get:
+      operationId: timedRequest
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/metric/increment:
+    get:
+      operationId: doIncrement
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: integer
+                format: int64
+  /data/resilience:
+    get:
+      operationId: checkTimeout
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+  /data/secured/test:
+    get:
+      operationId: testSecureCall
+      responses:
+        default:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: string
+</PRE></BODY></HTML>
